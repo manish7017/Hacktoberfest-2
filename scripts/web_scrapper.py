@@ -45,7 +45,7 @@ def build_api_url(word):
 
 def download_page(url):
     try:
-        return requests.get(url).text
+        return requests.get(url, timeout=60).text
     except Exception as e:
         print("Error: Bad URL")
 
