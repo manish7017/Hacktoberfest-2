@@ -43,7 +43,7 @@ def get_words_starting_with(letters, limit=10):
         'md': 'p,d',  # metadata part of speech, defn
         'max': limit
     }
-    resp = requests.get(BASE_API, params=params)
+    resp = requests.get(BASE_API, params=params, timeout=60)
     data = resp.json()
 
     for entry in data:
